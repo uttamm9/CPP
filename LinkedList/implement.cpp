@@ -30,9 +30,32 @@ class LinkedList{
           temp->next = newNode;
         }
       }
+      void popback(){
+        if(head == nullptr){
+          cout<<"Nothing to delete\n";
+          return;
+        }
+        else if(head->next==nullptr){
+          delete head;
+          head = nullptr;
+          return;
+        }
+        Node *temp = head;
+        while (temp->next->next!= nullptr)
+        {
+          temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = nullptr;
+        
+      }
 };
 int main(){
     LinkedList list;
     list.pushback(10);
+    list.pushback(15);
+    list.pushback(20);
+    // list.display();
+    list.popback();
   return 0;
 }

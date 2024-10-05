@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/uttam/OneDrive/Desktop/CPP/array",
-      "program": "c:/Users/uttam/OneDrive/Desktop/CPP/array/build/Debug/outDebug",
+      "cwd": "c:/Users/uttam/OneDrive/Desktop/CPP",
+      "program": "c:/Users/uttam/OneDrive/Desktop/CPP/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
