@@ -23,7 +23,8 @@ class LinkedList{
         }
         else{
           Node *temp = head;
-          while (temp->next == nullptr)
+          while (temp->next 
+          != nullptr)
           {
             temp = temp->next;
           }
@@ -49,13 +50,21 @@ class LinkedList{
         temp->next = nullptr;
         
       }
+      void display(){
+        Node* temp = head;
+        while(temp!=nullptr){
+          cout<<temp->data<<" -> ";
+          temp = temp->next;
+        }
+        cout<<"NULL"<<endl;
+      }
 };
 int main(){
     LinkedList list;
     list.pushback(10);
     list.pushback(15);
     list.pushback(20);
-    // list.display();
+    list.display();
     list.popback();
   return 0;
 }
