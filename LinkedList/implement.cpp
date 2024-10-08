@@ -58,6 +58,17 @@ class LinkedList{
         }
         cout<<"NULL"<<endl;
       }
+
+      void popfront(int val){
+              Node *newnode = new Node(val);
+              if(head == nullptr){
+                head = newnode;
+              }
+              else{
+                newnode->next = head;
+                head = newnode;
+              }
+      }
 };
 int main(){
     LinkedList list;
@@ -66,5 +77,7 @@ int main(){
     list.pushback(20);
     list.display();
     list.popback();
+    list.popfront(44);
+    list.display();
   return 0;
 }
