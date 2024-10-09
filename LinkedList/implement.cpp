@@ -69,6 +69,17 @@ class LinkedList{
                 head = newnode;
               }
       }
+      int length(){
+        int count = 0;
+        Node *temp = head;
+        while(temp!=nullptr)
+        {
+          count++;
+          temp = temp->next;
+        }
+        return count;
+        
+      }
 };
 int main(){
     LinkedList list;
@@ -79,5 +90,6 @@ int main(){
     list.popback();
     list.popfront(44);
     list.display();
+    cout<<list.length()<<endl;
   return 0;
 }
