@@ -80,6 +80,23 @@ class LinkedList{
         return count;
         
       }
+       void insert(int val, int pos)
+        {
+            if(pos > length())
+            {
+                cout<<"Invalid position\n";
+                return;
+            }
+            Node *temp = head;
+            while(pos)
+            {
+                temp = temp->next;
+                pos--;
+            }
+            Node *newnode = new Node(val);
+            newnode->next = temp->next;
+            temp->next = newnode;
+        }
 };
 int main(){
     LinkedList list;
@@ -91,5 +108,7 @@ int main(){
     list.popfront(44);
     list.display();
     cout<<list.length()<<endl;
+    list.insert(77,2); //77 is value ans 2 is index no(2+1).
+    list.display();
   return 0;
 }
