@@ -80,23 +80,20 @@ class LinkedList{
         return count;
         
       }
-       void insert(int val, int pos)
-        {
-            if(pos > length())
-            {
-                cout<<"Invalid position\n";
-                return;
-            }
-            Node *temp = head;
-            while(pos)
-            {
-                temp = temp->next;
-                pos--;
-            }
-            Node *newnode = new Node(val);
-            newnode->next = temp->next;
-            temp->next = newnode;
+       void insert(int val,int pos){
+        if(pos>length()){
+          cout<<"Invalid position\n";
+          return;
         }
+        Node *temp = head;
+        while ((pos--))
+        {
+          temp = temp->next;
+        }
+        Node *newnode = new Node(val);
+        newnode->next = temp->next;
+        temp->next = newnode;        
+       }
 };
 int main(){
     LinkedList list;
