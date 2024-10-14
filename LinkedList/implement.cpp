@@ -94,6 +94,22 @@ class LinkedList{
         newnode->next = temp->next;
         temp->next = newnode;        
        }
+
+       bool find(int val){
+        if(head==nullptr){
+          return false;
+        }
+        else{
+          Node *temp = head;
+          while(temp!=nullptr){
+            if(temp->data == val){
+              return true;
+            }
+            temp = temp->next;
+          }
+          return false;
+        }
+       }
 };
 int main(){
     LinkedList list;
@@ -107,5 +123,6 @@ int main(){
     cout<<list.length()<<endl;
     list.insert(77,2); //77 is value ans 2 is index no(2+1).
     list.display();
+    cout<<list.find(10);
   return 0;
 }
