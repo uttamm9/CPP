@@ -110,6 +110,17 @@ class LinkedList{
           return false;
         }
        }
+
+       void reverse(){
+        Node *prev = nullptr, *current = head, *next = nullptr;
+          while(current!=nullptr){
+            next = current->next; //store next node
+            current->next = prev; // reverse the link
+            prev = current; // move prev to one step forward
+            current = next;  //move current one step forward
+          }
+          head = prev; // update head to last node (new node)
+       }
 };
 int main(){
     LinkedList list;
@@ -123,6 +134,8 @@ int main(){
     cout<<list.length()<<endl;
     list.insert(77,2); //77 is value ans 2 is index no(2+1).
     list.display();
-    cout<<list.find(10);
+    cout<<list.find(10)<<"\n";
+    list.reverse();
+    list.display();
   return 0;
 }
