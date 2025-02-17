@@ -1,0 +1,4 @@
+Hello my name is uttam
+This is second line in file
+Appending new line in file
+Writing and reading in the same file.

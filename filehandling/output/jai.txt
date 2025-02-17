@@ -1,0 +1,2 @@
+fout is an object like cout
+open is a member function
