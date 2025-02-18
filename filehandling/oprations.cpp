@@ -8,7 +8,7 @@ int main() {
     return 1;
   }
 
-  // Assuming the vector is already defined and populated
+ 
   vector<int> vec;
   ifstream fin("zero.txt");
   if(!fin){
@@ -16,18 +16,28 @@ int main() {
     return 1;
   }
 
-  int num;
-  while(fin >> num) {
-    vec.push_back(num);
+  string word;
+  while(fin >> word){
+    try {
+      int num = stoi(word);
+      vec.push_back(num);
+    } catch (invalid_argument const &e) {
+      // Skip non-integer words
+    }
+  }
+
+  for(int num : vec) {
+    cout << num << " ";
   }
 
   fin.close();
   sort(vec.begin(), vec.end());
 
-  for(int num : vec) {
-    fout << num << " ";
+  fout<<"Sorted array"<<endl;
+  for(int i=0;i<5;i++){
+    fout<<vec[i]<<" ";
   }
-
+  
   fout.close();
   return 0;
 }
